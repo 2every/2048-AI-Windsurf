@@ -1,0 +1,194 @@
+.game-container {
+    width: min(90vw, 410px);
+    margin: 0 auto;
+    text-align: center;
+    padding: min(5vw, 20px);
+    padding-bottom: min(10vw, 40px);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: min(4vw, 20px);
+}
+
+.logo {
+    text-align: left;
+}
+
+.logo-2048 {
+    font-size: min(15vw, 60px);
+    font-weight: bold;
+    background: linear-gradient(to right, #f65e3b, #edcf72);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    line-height: 1;
+    margin-bottom: min(2vw, 10px);
+}
+
+.subtitle {
+    font-size: min(3.5vw, 14px);
+    color: #776e65;
+}
+
+.scores-container {
+    display: flex;
+    gap: min(2vw, 10px);
+}
+
+.score-box {
+    background: #bbada0;
+    padding: min(2vw, 10px) min(3vw, 15px);
+    border-radius: 5px;
+    text-align: center;
+    min-width: min(20vw, 80px);
+}
+
+.score-label {
+    color: #eee4da;
+    font-size: min(3vw, 12px);
+    font-weight: bold;
+}
+
+#score {
+    color: white;
+    font-size: min(5vw, 20px);
+    font-weight: bold;
+}
+
+#restart {
+    background: #8f7a66;
+    color: white;
+    border: none;
+    padding: min(2vw, 10px) min(4vw, 20px);
+    font-size: min(4vw, 16px);
+    border-radius: 5px;
+    cursor: pointer;
+    margin: min(3vw, 15px) 0;
+    transition: background-color 0.15s ease;
+}
+
+#restart:hover {
+    background: #7f6a56;
+}
+
+@media (max-width: 520px) {
+    .game-container {
+        width: min(90vw, 280px);
+        padding: min(5vw, 5px);
+    }
+
+    .grid-container {
+        gap: min(2vw, 5px);
+        padding: min(2vw, 5px);
+    }
+
+    .tile {
+        font-size: min(6vw, 18px);
+    }
+
+    #suggestion {
+        font-size: min(4vw, 16px);
+        margin-top: min(4vw, 10px);
+    }
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: min(2vw, 10px);
+    background-color: #bbada0;
+    padding: min(2vw, 10px);
+    border-radius: 6px;
+    aspect-ratio: 1;
+    width: 100%;
+    touch-action: none; /* Prevent scrolling only on the game grid */
+}
+
+.tile {
+    width: 100%;
+    aspect-ratio: 1;
+    background-color: #eee4da;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: min(6vw, 24px);
+    font-weight: bold;
+    border-radius: 5px;
+    transition: all 0.15s ease-in-out;
+    position: relative;
+}
+
+.tile.merged {
+    animation: pop 0.15s ease-in-out;
+}
+
+.tile[data-value="2"] { background-color: #eee4da; }
+.tile[data-value="4"] { background-color: #ede0c8; }
+.tile[data-value="8"] { background-color: #f2b179; color: white; }
+.tile[data-value="16"] { background-color: #f59563; color: white; }
+.tile[data-value="32"] { background-color: #f67c5f; color: white; }
+.tile[data-value="64"] { background-color: #f65e3b; color: white; }
+.tile[data-value="128"] { background-color: #edcf72; color: white; }
+.tile[data-value="256"] { background-color: #edcc61; color: white; }
+.tile[data-value="512"] { background-color: #edc850; color: white; }
+.tile[data-value="1024"] { background-color: #edc53f; color: white; }
+.tile[data-value="2048"] { background-color: #edc22e; color: white; }
+
+@keyframes pop {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+#suggestion {
+    margin-top: min(4vw, 20px);
+    font-size: min(4vw, 18px);
+    color: #776e65;
+}
+
+.rules-container {
+    margin-top: min(6vw, 30px);
+    padding: min(4vw, 20px);
+    background: rgba(238, 228, 218, 0.35);
+    border-radius: 6px;
+    text-align: left;
+}
+
+.rules-container h2 {
+    color: #776e65;
+    font-size: min(5vw, 20px);
+    margin-bottom: min(3vw, 15px);
+    text-align: center;
+}
+
+.rules {
+    color: #776e65;
+    font-size: min(3.5vw, 14px);
+    line-height: 1.5;
+}
+
+.rules p {
+    margin: min(2vw, 8px) 0;
+}
+
+.controls {
+    margin-top: min(3vw, 15px);
+    padding-top: min(3vw, 15px);
+    border-top: 2px solid rgba(119, 110, 101, 0.15);
+}
+
+.controls p:first-child {
+    font-weight: bold;
+    margin-bottom: min(2vw, 8px);
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow-x: hidden;
+    background: #faf8ef;
+}

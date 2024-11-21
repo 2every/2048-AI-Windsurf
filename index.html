@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link rel="stylesheet" href="styles.css">
+    <title>2048 Game</title>
+</head>
+<body>
+    <div class="game-container">
+        <header class="header">
+            <div class="logo">
+                <div class="logo-2048">2048</div>
+                <div class="subtitle">Join the numbers and get to 2048!</div>
+            </div>
+            <div class="scores-container">
+                <div class="score-box">
+                    <div class="score-label">SCORE</div>
+                    <div id="score">0</div>
+                </div>
+            </div>
+        </header>
+        <div class="grid-container">
+            <!-- Grid will be dynamically generated here -->
+        </div>
+        <button id="restart">New Game</button>
+        <div id="suggestion"></div>
+        <div class="rules-container">
+            <h2>How to Play</h2>
+            <div class="rules">
+                <p>🎮 Use arrow keys or swipe to move tiles</p>
+                <p>🔄 Tiles with the same number merge into one</p>
+                <p>🎯 Combine tiles to reach 2048!</p>
+                <div class="controls">
+                    <p>Controls:</p>
+                    <p>↑ ↓ ← → Arrow keys (Desktop)</p>
+                    <p>Swipe gestures (Mobile)</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
